@@ -1,0 +1,28 @@
+{"cards": [
+    {
+        "style": {
+            "border": "solid",
+            "border-color": "gold",
+            "background": "red",
+            "font": "Courier"
+        },
+        "info": {
+            "text": "Hello World"
+    
+        }
+    },
+    {
+        "style": {
+            "border": "solid",
+            "border-color": "black",
+            "background": "pink",
+            "font": "Courier"
+        },
+        "info": {
+            "text": "Hello there"
+    
+        }
+
+    }
+    
+]}
