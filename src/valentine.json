@@ -2,8 +2,8 @@
     {
         "style": {
             "border": "solid",
-            "border-color": "gold",
-            "background": "red",
+            "border_color": "border-gold",
+            "background": "background-red",
             "font": "Courier"
         },
         "info": {
@@ -14,8 +14,8 @@
     {
         "style": {
             "border": "solid",
-            "border-color": "black",
-            "background": "pink",
+            "border_color": "border-black",
+            "background": "background-pink",
             "font": "Courier"
         },
         "info": {
