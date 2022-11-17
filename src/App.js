@@ -16,12 +16,17 @@ function App({ cardData }) {
   <section className="container">
 
     {login ? (
-      <div><Header setPage={setPage} setLogin={setLogin}/></div>
-      ) : (
-        <div>
-      <Login 
-      setLogin={setLogin}/>
-    </div>)}
+      <div>
+        <Header 
+          setPage={setPage} 
+          setLogin={setLogin}/>
+      </div>
+    ) : (
+      <div>
+        <Login 
+          setPage={setPage}
+          setLogin={setLogin}/>
+      </div>)}
     
       {page === 'myCards' && (<div><MyCards /></div>)}
       {page === 'friends' && (<div><Friends /></div>)}

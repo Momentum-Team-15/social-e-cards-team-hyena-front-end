@@ -1,4 +1,4 @@
-export const Login = ({setLogin}) => {
+export const Login = ({setLogin, setPage}) => {
     return (
         <div>
             <header className='hero is-small is-info'>
@@ -14,7 +14,8 @@ export const Login = ({setLogin}) => {
                 </div>
                 <div className="field">
                     <p className="control">
-                        <button className="button has-background-danger-light" onClick={() => setLogin(true)}>
+                        <button className="button has-background-danger-light" 
+                            onClick={() => {setLogin(true); setPage('allCards')}}>
                             Login
                         </button>
                     </p>
