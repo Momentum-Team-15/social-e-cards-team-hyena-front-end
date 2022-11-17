@@ -2,6 +2,8 @@
 export const AllCards = (props) => {
 
     return (
+        <section>
+            <h1>All Cards</h1>
         <div className="card-grid">
             {props.data.map((card) => (
             <div className="card">
@@ -15,5 +17,6 @@ export const AllCards = (props) => {
             </div>
             ))}
         </div>
+        </section>
     )
 };
