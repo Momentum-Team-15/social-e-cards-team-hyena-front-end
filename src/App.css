@@ -3,28 +3,15 @@
   flex-grow: 1;
   max-width: 100%;
 }
+.cardlist{
+  display: flex;
+  justify-content: space-between;
+}
+.card{
+  margin: 10px;
+  padding: 10px;
+}
 .card-grid {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-}
-.solid {
-  border:  2px solid
-}
-.border-black {
-  border-color: black;
-}
-.border-red {
-  border-color: red;
-}
-.border-gold{
-  border-color: gold;
-}
-.background-black {
-  background-color: black;
-}
-.background-red {
-  background-color: red;
-}
-.background-pink {
-  background-color: pink;
 }
