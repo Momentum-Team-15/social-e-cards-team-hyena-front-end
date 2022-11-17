@@ -14,7 +14,7 @@ export const Login = ({setLogin}) => {
                 </div>
                 <div className="field">
                     <p className="control">
-                        <button className="button is-success" onClick={() => setLogin(true)}>
+                        <button className="button has-background-danger-light" onClick={() => setLogin(true)}>
                             Login
                         </button>
                     </p>
