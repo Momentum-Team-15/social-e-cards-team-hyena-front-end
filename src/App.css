@@ -3,28 +3,45 @@
   flex-grow: 1;
   max-width: 100%;
 }
+
 .card-grid {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
 }
+
 .solid {
-  border:  2px solid
+  border: 2px solid
 }
+
 .border-black {
   border-color: black;
 }
+
 .border-red {
   border-color: red;
 }
-.border-gold{
+
+.border-gold {
   border-color: gold;
 }
+
 .background-black {
   background-color: black;
 }
+
 .background-red {
   background-color: red;
 }
+
 .background-pink {
   background-color: pink;
+}
+
+.box {
+  border: 1px solid hsl(204, 86%, 53%);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
 }
