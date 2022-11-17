@@ -1,6 +1,7 @@
 import './App.css';
 import 'bulma/css/bulma.min.css'
-import {useState} from 'react'
+import { Login } from './components/Login'
+import { useState } from 'react'
 import { Header } from './components/Header'
 import { AllCards } from './components/AllCards'
 import { MyCards} from './components/MyCards'
@@ -9,31 +10,24 @@ import { CreateCard } from './components/CreateCard'
 
 function App({ cardData }) {
   const [page, setPage] = useState('')
+  const [login, setLogin] = useState(null)
 
   return (
   <section className="container">
-    <div>
-      <Header
-        setPage={setPage}/>
-    </div>
-  {page === 'allCards' ? (
-    <div>
-      <AllCards 
-        data={cardData}/>
-    </div>)
-  : page === 'myCards' ? (
-    <div>
-      <MyCards />
-    </div>) 
-  : page === 'friends' ? (
-    <div>
-      <Friends />
-    </div>)
-  : page === 'createCard' ? (
-    <div>
-      <CreateCard />
-    </div>
-  ) : (<div><AllCards data={cardData}/></div>)}
+
+    {login ? (
+      <div><Header setPage={setPage} setLogin={setLogin}/></div>
+      ) : (
+        <div>
+      <Login 
+      setLogin={setLogin}/>
+    </div>)}
+    
+      {page === 'myCards' && (<div><MyCards /></div>)}
+      {page === 'friends' && (<div><Friends /></div>)}
+      {page === 'createCard' && (<div><CreateCard /></div>)}
+      {page === 'allCards' && (<div><AllCards data={cardData}/></div>)} 
+
   </section>
 
   );

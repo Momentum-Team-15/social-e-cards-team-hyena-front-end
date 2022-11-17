@@ -1,4 +1,4 @@
-export const Header = ({setPage}) => {
+export const Header = ({setPage, setLogin}) => {
     return (
     <header className='hero is-small is-info'>
         <h1 className='hero-body title is-1 has-text-centered'>Corny Cards
@@ -12,7 +12,8 @@ export const Header = ({setPage}) => {
                 onClick={() => setPage('myCards')}>My cards</button>
             <button className='button is-white is-outlined'
                 onClick={() => setPage('friends')}>Friends</button>
-            <button className='button is-white is-outlined'>Account</button>
+            <button className='button is-white is-outlined'
+                onClick={() => {setLogin(null); setPage('')}}>Logout</button>
         </div>
     </header >
     )
