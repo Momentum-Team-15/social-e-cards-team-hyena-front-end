@@ -1,11 +1,18 @@
 
 export const AllCards = (props) => {
+
     return (
         <div className="card-grid">
             {props.data.map((card) => (
-            <div className={`${card.style.border} ${card.style.border_color} ${card.style.background}`}>
+            <div className="card">
+            <div className={`has-background-${card.style.background}`}>
                 <p>{card.info.text}</p>
-        </div>
+            </div>
+            <div className="cardlist">
+                <p>by {card.user.author}</p>
+                <button>like</button>
+            </div>
+            </div>
             ))}
         </div>
     )

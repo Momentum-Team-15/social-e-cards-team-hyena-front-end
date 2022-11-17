@@ -3,11 +3,23 @@
   flex-grow: 1;
   max-width: 100%;
 }
+<<<<<<< HEAD
 
+=======
+.cardlist{
+  display: flex;
+  justify-content: space-between;
+}
+.card{
+  margin: 10px;
+  padding: 10px;
+}
+>>>>>>> main
 .card-grid {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
 }
+<<<<<<< HEAD
 
 .solid {
   border: 2px solid
@@ -45,3 +57,5 @@
   transform: translate(-50%, -50%);
   width: 400px;
 }
+=======
+>>>>>>> main

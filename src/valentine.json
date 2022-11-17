@@ -1,9 +1,13 @@
 {"cards": [
-    {
+    {   "user": {
+            "id": "1",
+            "author": "Corey"
+            
+    },
         "style": {
             "border": "solid",
-            "border_color": "border-gold",
-            "background": "background-red",
+            "border_color": "",
+            "background": "danger",
             "font": "Courier"
         },
         "info": {
@@ -11,11 +15,15 @@
     
         }
     },
-    {
+    {   "user": {
+        "id": "2",
+        "author": "Taylor"
+
+},
         "style": {
             "border": "solid",
-            "border_color": "border-black",
-            "background": "background-pink",
+            "border_color": "",
+            "background": "danger-light",
             "font": "Courier"
         },
         "info": {
