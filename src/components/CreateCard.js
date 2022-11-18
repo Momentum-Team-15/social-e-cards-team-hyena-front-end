@@ -10,12 +10,12 @@ export const CreateCard = () => {
         <section>
             <h1 className="title is-4 has-text-centered">Create a Card</h1>
             <div className="coulmns is-flex is-justify-content-space-between">
-                <div className="column is-4 box">
+                <div className="column is-4 is-offset-1 box">
 
                 <div className="dropdown">
                 <button className="button" onClick={()=>{ open === 1 ? setOpen(null) : setOpen(1)}}>border thickness</button>
                 {open === 1 && (
-                <ul className="box menu">
+                <ul className=" ulbtn box menu">
                     <li className="menu-item">
                         <button className="btn button" onClick={()=>{setBorderThickness('0px'); setOpen(false)}}>0</button>
                     </li>
@@ -37,27 +37,27 @@ export const CreateCard = () => {
                 <br/>
                 <button className="button" onClick={()=>{ open === 2 ? setOpen(null) : setOpen(2)}}>background color</button>
                 {open === 2  && (
-                <ul className="box menu">
+                <ul className="ulbtn box menu">
                     <li className="menu-item">
-                        <button className="btn button" onClick={()=>{setBackground('hsl(0, 0%, 100%)'); setOpen(false)}}>white</button>
+                        <button className="btn button" onClick={()=>{setBackground('#FFFFFF'); setOpen(false)}}>white</button>
                     </li>
                     <li className="menu-item">
-                        <button className="btn button is-danger" onClick={()=>{setBackground('hsl(348, 100%, 61%)'); setOpen(false)}}>red</button>
+                        <button className="btn button is-danger" onClick={()=>{setBackground('#FF3860'); setOpen(false)}}>red</button>
                     </li>
                     <li className="menu-item">
-                        <button className="btn button is-info" onClick={()=>{setBackground('hsl(204, 86%, 53%)'); setOpen(false)}}>blue</button>
+                        <button className="btn button is-info" onClick={()=>{setBackground('#209CEE'); setOpen(false)}}>blue</button>
                     </li>
                     <li className="menu-item">
-                        <button className="btn button is-warning" onClick={()=>{setBackground('hsl(48, 100%, 67%)'); setOpen(false)}}>yellow</button>
+                        <button className="btn button is-warning" onClick={()=>{setBackground('#FFDD57'); setOpen(false)}}>yellow</button>
                     </li> 
                     <li className="menu-item">
-                        <button className="btn button has-background-danger-light" onClick={()=>{setBackground('hsl(347, 90%, 96%)'); setOpen(false)}}>pink</button>
+                        <button className="btn button has-background-danger-light" onClick={()=>{setBackground('#FEECF0'); setOpen(false)}}>pink</button>
                     </li>
                     <li className="menu-item">
-                        <button className="btn button has-background-warning-light" onClick={()=>{setBackground('hsl(48, 100%, 96%)'); setOpen(false)}}>light yellow</button>
+                        <button className="btn button has-background-warning-light" onClick={()=>{setBackground('#FFFBEB'); setOpen(false)}}>light yellow</button>
                     </li>
                     <li className="menu-item">
-                        <button className="btn button has-background-info-light" onClick={()=>{setBackground('hsl(206, 70%, 96%)'); setOpen(false)}}>light blue</button>
+                        <button className="btn button has-background-info-light" onClick={()=>{setBackground('#EEF6FC'); setOpen(false)}}>light blue</button>
                     </li>
                 </ul>
                 )}
@@ -70,7 +70,9 @@ export const CreateCard = () => {
 
 
                 <div className="box">
-                    <div className="created-card" style={{background: background, borderWidth: borderThickness, borderStyle: 'solid', borderColor: 'black'}}> </div>
+                    <div className="created-card" style={{background: background, 
+                        borderWidth: borderThickness, borderStyle: 'solid', borderColor: 'black'}}> 
+                </div>
                 </div>
 
    
