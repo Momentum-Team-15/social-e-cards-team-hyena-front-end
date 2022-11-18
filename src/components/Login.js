@@ -5,7 +5,7 @@ export const Login = ({setLogin, setPage}) => {
                 <h1 className='hero-body title is-1 has-text-centered'>Corny Cards</h1>
             </header>
 
-            <div className="box">
+            <div className="login-box box">
                 <div className="field">
                     <input className="input" type="email" placeholder="Email" />
                 </div>
