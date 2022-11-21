@@ -5,9 +5,10 @@
             
     },
         "style": {
-            "border": "solid",
-            "border_color": "",
-            "background": "danger",
+            "border_width": "5px",
+            "border_style": "solid",
+            "border_color": "red",
+            "background": "lightblue",
             "font": "Courier"
         },
         "info": {
@@ -21,9 +22,10 @@
 
 },
         "style": {
-            "border": "solid",
-            "border_color": "",
-            "background": "danger-light",
+            "border_width": "3px",
+            "border_style": "dotted",
+            "border_color": "green",
+            "background": "lightgreen",
             "font": "Courier"
         },
         "info": {
@@ -38,9 +40,10 @@
         
 },
     "style": {
-        "border": "solid",
-        "border_color": "",
-        "background": "danger",
+        "border_width": "8px",
+        "border_style": "dashed",
+        "border_color": "blue",
+        "background": "pink",
         "font": "Courier"
     },
     "info": {
@@ -54,9 +57,10 @@
 
 },
     "style": {
-        "border": "solid",
-        "border_color": "",
-        "background": "danger-light",
+        "border_width": "15px",
+        "border_style": "double",
+        "border_color": "yellow",
+        "background": "purple",
         "font": "Courier"
     },
     "info": {
@@ -71,8 +75,44 @@
     
 },
 "style": {
-    "border": "solid",
-    "border_color": "",
+    "border_width": "2px",
+    "border_style": "solid",
+    "border_color": "purple",
+    "background": "lightblue",
+    "font": "Courier"
+},
+"info": {
+    "text": "Hello World"
+
+}
+},
+{   "user": {
+"id": "2",
+"author": "Taylor"
+
+},
+"style": {
+    "border_width": "3px",
+    "border_style": "solid",
+    "border_color": "red",
+    "background": "pink",
+    "font": "Courier"
+},
+"info": {
+    "text": "Hello there"
+
+}
+
+},
+{   "user": {
+    "id": "1",
+    "author": "Corey"
+    
+},
+"style": {
+    "border_width": "6px",
+    "border_style": "solid",
+    "border_color": "green",
     "background": "danger",
     "font": "Courier"
 },
@@ -87,8 +127,9 @@
 
 },
 "style": {
-    "border": "solid",
-    "border_color": "",
+    "border_width": "1px",
+    "border_style": "dashed",
+    "border_color": "orange",
     "background": "danger-light",
     "font": "Courier"
 },
@@ -104,8 +145,9 @@
     
 },
 "style": {
-    "border": "solid",
-    "border_color": "",
+    "border_width": "5px",
+    "border_style": "dotted",
+    "border_color": "blue",
     "background": "danger",
     "font": "Courier"
 },
@@ -120,41 +162,9 @@
 
 },
 "style": {
+    "border_width": "5px",
     "border": "solid",
-    "border_color": "",
-    "background": "danger-light",
-    "font": "Courier"
-},
-"info": {
-    "text": "Hello there"
-
-}
-
-},
-{   "user": {
-    "id": "1",
-    "author": "Corey"
-    
-},
-"style": {
-    "border": "solid",
-    "border_color": "",
-    "background": "danger",
-    "font": "Courier"
-},
-"info": {
-    "text": "Hello World"
-
-}
-},
-{   "user": {
-"id": "2",
-"author": "Taylor"
-
-},
-"style": {
-    "border": "solid",
-    "border_color": "",
+    "border_color": "red",
     "background": "danger-light",
     "font": "Courier"
 },
