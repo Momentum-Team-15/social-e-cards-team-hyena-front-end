@@ -4,8 +4,6 @@ export const Header = ({ setPage, setLogin }) => {
     return (
         <header className='hero is-small is-info'>
             <h1 className='hero-body title is-1 has-text-centered'>Corny Cards
-                <button className='button is-pulled-right is-danger'
-                    onClick={() => setPage('createCard')}>Create Card</button>
             </h1>
                 <nav className="navbar is-flex is-justify-content-space-around">
                     <div className="navbar-item">
