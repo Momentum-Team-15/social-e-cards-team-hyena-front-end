@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
 
-export const Header = ({ setPage, setLogin }) => {
+export const Header = ({ setLogin }) => {
     return (
         <header className='hero is-small is-info'>
             <h1 className='hero-body title is-1 has-text-centered'>Corny Cards
-                <button className='button is-pulled-right is-danger'
-                    onClick={() => setPage('createCard')}>Create Card</button>
             </h1>
                 <nav className="navbar is-flex is-justify-content-space-around">
                     <div className="navbar-item">
@@ -21,7 +19,7 @@ export const Header = ({ setPage, setLogin }) => {
                     <Link to="/friends">Friends</Link>
                     </div>
                     <div className="navbar-item">
-                    <Link onClick={() => setLogin(null)} to="/login">Log Out</Link>
+                    <Link onClick={() => setLogin(null)} to="/">Log Out</Link>
                     </div>
                 </nav>
         </header >
