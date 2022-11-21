@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const Login = ({setLogin, setPage}) => {
     return (
         <div>
@@ -15,8 +17,8 @@ export const Login = ({setLogin, setPage}) => {
                 <div className="field">
                     <p className="control">
                         <button className="button has-background-danger-light" 
-                            onClick={() => {setLogin(true); setPage('allCards')}}>
-                            Login
+                            onClick={() => {setLogin(true)}}>
+                                <Link to="/mycards">Log In</Link>
                         </button>
                     </p>
                 </div>
