@@ -21,6 +21,7 @@ export const Header = ({ setLogin }) => {
                     <div className="navbar-item title is-5">
                     <Link to="/" onClick={() => setLogin(null)}>Log Out</Link>
                     </div>
+                    <div></div>
                 </nav>
         </header >
     )
