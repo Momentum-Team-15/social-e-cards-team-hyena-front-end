@@ -15,7 +15,8 @@ export const Login = ({ setLogin }) => {
                 </div>
                 <div className="field">
                     <p className="control">
-                        <Link className='button has-background-danger-light' onClick={() => setLogin(true)} to="/mycards">Log In</Link>
+                        <Link className='button has-background-danger-light' 
+                            onClick={() => setLogin(true)} to="/all">Log In</Link>
                     </p>
                 </div>
             </div>

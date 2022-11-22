@@ -9,7 +9,8 @@
             "border_style": "solid",
             "border_color": "red",
             "background": "lightblue",
-            "font": "Courier"
+            "font": "Courier",
+            "text_color": ""
         },
         "info": {
             "text": "Hello World"
@@ -26,7 +27,8 @@
             "border_style": "dotted",
             "border_color": "green",
             "background": "lightgreen",
-            "font": "Courier"
+            "font": "Courier",
+            "text_color": ""
         },
         "info": {
             "text": "Hello there"
@@ -44,7 +46,8 @@
         "border_style": "dashed",
         "border_color": "blue",
         "background": "pink",
-        "font": "Courier"
+        "font": "Courier",
+        "text_color": ""
     },
     "info": {
         "text": "Hello World"
@@ -61,7 +64,8 @@
         "border_style": "double",
         "border_color": "yellow",
         "background": "purple",
-        "font": "Courier"
+        "font": "Courier",
+        "text_color": "white"
     },
     "info": {
         "text": "Hello there"
@@ -79,7 +83,8 @@
     "border_style": "solid",
     "border_color": "purple",
     "background": "lightblue",
-    "font": "Courier"
+    "font": "Courier",
+    "text_color": "white"
 },
 "info": {
     "text": "Hello World"
@@ -96,7 +101,8 @@
     "border_style": "solid",
     "border_color": "red",
     "background": "pink",
-    "font": "Courier"
+    "font": "Courier",
+    "text_color": ""
 },
 "info": {
     "text": "Hello there"
@@ -114,7 +120,8 @@
     "border_style": "solid",
     "border_color": "green",
     "background": "danger",
-    "font": "Courier"
+    "font": "Courier",
+    "text_color": ""
 },
 "info": {
     "text": "Hello World"
@@ -131,7 +138,8 @@
     "border_style": "dashed",
     "border_color": "orange",
     "background": "danger-light",
-    "font": "Courier"
+    "font": "Courier",
+    "text_color": ""
 },
 "info": {
     "text": "Hello there"
@@ -149,7 +157,8 @@
     "border_style": "dotted",
     "border_color": "blue",
     "background": "danger",
-    "font": "Courier"
+    "font": "Courier",
+    "text_color": ""
 },
 "info": {
     "text": "Hello World"
@@ -166,7 +175,8 @@
     "border": "solid",
     "border_color": "red",
     "background": "danger-light",
-    "font": "Courier"
+    "font": "Courier",
+    "text_color": ""
 },
 "info": {
     "text": "Hello there"
