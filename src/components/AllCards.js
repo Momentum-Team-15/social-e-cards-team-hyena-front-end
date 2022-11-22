@@ -1,20 +1,14 @@
+import { Card } from './Card'
 
 export const AllCards = (props) => {
 
     return (
         <section>
-            <h1>All Cards</h1>
+            <h1 className="page-title title is-4 has-text-centered">All Cards</h1>
             <div className="card-grid">
                 {props.data.map((card) => (
                     <div className="card">
-                        <div className="card-text" style={{
-                            borderWidth: card.style.border_width,
-                            borderStyle: card.style.border_style,
-                            borderColor: card.style.border_color,
-                            backgroundColor: card.style.background
-                        }}>
-                            <p>{card.info.text}</p>
-                        </div>
+                        <Card card={card}/>
                         <div className="cardlist">
                             <p>by {card.user.author}</p>
                             <button>like</button>
