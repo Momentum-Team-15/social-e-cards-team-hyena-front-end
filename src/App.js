@@ -8,19 +8,32 @@ import { MyCards } from './components/MyCards'
 import { Friends } from './components/FriendsCards'
 import { CreateCard } from './components/CreateCard'
 import { Routes, Route } from "react-router-dom"
+import useLocalStorageState from 'use-local-storage-state';
+import axios from 'axios';
 
 function App({ cardData }) {
-  const [login, setLogin] = useState(null)
+  const [token, setToken] = useLocalStorageState('cardToken', null)
+  const [username, setUsername] = useLocalStorageState('cardUsername', '') 
+
+  const setAuth = (token, username) => {
+    setToken(token)
+    setUsername(username)
+  }
+
+  const handleLogout = () => {
+    axios.post('https://hyena-ecards.onrender.com/auth/token/logout', {}, 
+      { headers: { Authorization: `Token ${token}`, }, } )
+        .then(() => setAuth(null, ''))}
+
+  const isLoggedIn = username && token
 
   return (
 
-
     <section className="container">
 
-      {login ? (
+      {isLoggedIn ? (
         <div>
-          <Header
-            setLogin={setLogin} />
+          <Header handleLogout={handleLogout} />
           <Routes>
             <Route path="/all" element={<AllCards data={cardData}/>} />
             <Route path="/create" element={<CreateCard />} />
@@ -31,8 +44,7 @@ function App({ cardData }) {
         </div>
       ) : (
         <div>
-          <Login
-            setLogin={setLogin} />
+          <Login setAuth={setAuth} />
         </div>)}
 
 
