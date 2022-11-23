@@ -1,6 +1,24 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
 
-export const Login = ({ setLogin }) => {
+export const Login = ({ setAuth}) => {
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    const navigate = useNavigate()
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        axios.post('https://hyena-ecards.onrender.com/auth/token/login', {
+            username: username,
+            password: password})
+        .then((res) => {
+            const token = res.data.auth_token
+            setAuth(token, username)
+            navigate("/all")
+        })
+    }
+
     return (
         <div>
             <header className='hero is-small is-info'>
@@ -8,15 +26,17 @@ export const Login = ({ setLogin }) => {
             </header>
             <div className="login-box box">
                 <div className="field">
-                    <input className="input" type="email" placeholder="Email" />
+                    <input className="input" type="text" placeholder="username" 
+                    onChange={(e) => setUsername(e.target.value)}/>
                 </div>
                 <div className="field">
-                    <input className="input" type="password" placeholder="Password" />
+                    <input className="input" type="password" placeholder="Password" 
+                    onChange={(e) => setPassword(e.target.value)}/>
                 </div>
                 <div className="field">
                     <p className="control">
-                        <Link className='button has-background-danger-light' 
-                            onClick={() => setLogin(true)} to="/all">Log In</Link>
+                        <button className='button has-background-danger-light' 
+                            onClick={handleSubmit}>Log In</button>
                     </p>
                 </div>
             </div>

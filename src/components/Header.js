@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export const Header = ({ setLogin }) => {
+export const Header = ({ handleLogout }) => {
     return (
         <header className='hero is-small is-info'>
             <h1 className='hero-body title is-1 has-text-centered'>Corny Cards
@@ -19,7 +19,7 @@ export const Header = ({ setLogin }) => {
                     <Link to="/create">Create</Link>
                     </div>
                     <div className="navbar-item title is-5">
-                    <Link to="/" onClick={() => setLogin(null)}>Log Out</Link>
+                    <Link to="/" onClick={handleLogout}>Log Out</Link>
                     </div>
                     <div></div>
                 </nav>
