@@ -1,4 +1,5 @@
 import { Card } from './Card'
+import { Favorite } from './Favorite';
 
 export const AllCards = (props) => {
 
@@ -11,7 +12,7 @@ export const AllCards = (props) => {
                         <Card card={card}/>
                         <div className="cardlist">
                             <p>by {card.user.author}</p>
-                            <button>like</button>
+                            <Favorite />
                         </div>
                     </div>
                 ))}
