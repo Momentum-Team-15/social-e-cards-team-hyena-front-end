@@ -11,8 +11,8 @@ import useLocalStorageState from 'use-local-storage-state';
 import axios from 'axios';
 
 function App({ cardData }) {
-  const [token, setToken] = useLocalStorageState('cardToken', null)
-  const [username, setUsername] = useLocalStorageState('cardUsername', '') 
+  const [token, setToken] = useLocalStorageState("token", null)
+  const [username, setUsername] = useLocalStorageState("username", '') 
 
   const setAuth = (token, username) => {
     setToken(token)
@@ -24,7 +24,7 @@ function App({ cardData }) {
       { headers: { Authorization: `Token ${token}`, }, } )
         .then(() => setAuth(null, ''))}
 
-  const isLoggedIn = username && token
+  const isLoggedIn = token
 
   return (
 
@@ -32,7 +32,7 @@ function App({ cardData }) {
 
       {isLoggedIn ? (
         <div>
-          <Header handleLogout={handleLogout} />
+          <Header handleLogout={handleLogout} username={username}/>
           <Routes>
             <Route path="/all" element={<AllCards data={cardData}/>} />
             <Route path="/create" element={<CreateCard />} />
