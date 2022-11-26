@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 
-export const Header = ({ handleLogout }) => {
+export const Header = ({ handleLogout, username }) => {
     return (
         <header className='hero is-small is-info'>
-            <h1 className='hero-body title is-1 has-text-centered'>Corny Cards
-            </h1>
+            <h1 className='hero-body title is-1 has-text-centered'>Corny Cards</h1>
                 <nav className="navbar is-flex is-justify-content-space-around">
                     <div className="navbar-item title is-5">
                     <Link to="/all">All Cards</Link>
@@ -21,7 +20,7 @@ export const Header = ({ handleLogout }) => {
                     <div className="navbar-item title is-5">
                     <Link to="/" onClick={handleLogout}>Log Out</Link>
                     </div>
-                    <div></div>
+                    <p>Hello {username}!</p>
                 </nav>
         </header >
     )
