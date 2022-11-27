@@ -8,7 +8,7 @@ import { Friends } from './components/FriendsCards'
 import { CreateCard } from './components/CreateCard'
 import { Routes, Route } from "react-router-dom"
 import useLocalStorageState from 'use-local-storage-state';
-import axios from 'axios';
+
 
 function App({ cardData }) {
   const [token, setToken] = useLocalStorageState("token", null)
