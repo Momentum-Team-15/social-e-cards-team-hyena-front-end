@@ -19,11 +19,6 @@ function App({ cardData }) {
     setUsername(username)
   }
 
-  const handleLogout = () => {
-    axios.post('https://hyena-ecards.onrender.com/auth/token/logout', {}, 
-      { headers: { Authorization: `Token ${token}`, }, } )
-        .then(() => setAuth(null, ''))}
-
   const isLoggedIn = token
 
   return (
@@ -32,7 +27,7 @@ function App({ cardData }) {
 
       {isLoggedIn ? (
         <div>
-          <Header handleLogout={handleLogout} username={username}/>
+          <Header token={token} setAuth={setAuth} username={username}/>
           <Routes>
             <Route path="/all" element={<AllCards data={cardData}/>} />
             <Route path="/create" element={<CreateCard />} />
