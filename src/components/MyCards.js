@@ -1,15 +1,30 @@
+import axios from 'axios'
+import {useEffect, useState} from 'react'
 import { Card } from './Card'
-import { Favorite } from './Favorite'
+import { Favorite } from './Favorite';
 
-export const MyCards = (props) => {
+export const MyCards = ({data, username, token}) => {
+    const [cards, setCards] = useState([])
+
+    useEffect(() => {
+        axios.get('https://hyena-ecards.onrender.com/ecard/', {
+            headers: {
+                Authorization: `Token ${token}`,
+            }
+        })
+        .then(res => setCards(res.data))
+    }, [token])
+
+    console.log(cards)
+
     return(
         <div>
             <h1 className="page-title title is-4 has-text-centered">My Cards</h1>
             <div className="card-grid">
-            {props.data.map((card, idx) => (
+            {data.map((card, idx) => (
                 <div key={idx}>
-                {props.username === card.user.author && (
-                <div className="card" key={idx}>
+                {username === card.user.author && (
+                <div className="card">
                 
                         <Card card={card}/>
                         <div className="cardlist">
@@ -20,6 +35,22 @@ export const MyCards = (props) => {
                         )}
                 </div>
                 ))}
+
+                <div>
+
+                        <div className="card-grid">
+                            {cards.map((card, idx) => (
+                                <div key={idx}>
+                                    {username === card.owner && (
+                                    <div className="card">
+                                        <p>{card.back_message}</p>
+                                    </div>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+
+                </div>
 
             </div>
         </div>

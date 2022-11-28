@@ -13,11 +13,11 @@ export const CreateCard = ({ username, data }) => {
     const [textOfCard, setTextOfCard] = useState('')
     const borderThickness = widthOfBorder + 'px'
     const fontLargeness = sizeOfFont + 'px'
+
     let createContainer = {
         "user": {
-            "id": "1",
+            // "id": `${userId}`,
             "author": `${ username }`
-
         },
         "style": {
             "border_width": `${ borderThickness }`,
@@ -29,8 +29,8 @@ export const CreateCard = ({ username, data }) => {
             "font_size": `${ fontLargeness }`
         },
         "info": {
-            "text": `${ textOfCard }`
-
+            // "text_front": `${ frontTextOfCard }`,
+            // "text_back": `${ backTextOfCard }`
         }
     }
 
