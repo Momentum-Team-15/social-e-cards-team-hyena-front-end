@@ -7,7 +7,8 @@ export const Card = (props) => {
                     borderWidth: props.card.style.border_width,
                     borderStyle: props.card.style.border_style,
                     borderColor: props.card.style.border_color,
-                    backgroundColor: props.card.style.background
+                    backgroundColor: props.card.style.background,
+                    fontSize: props.card.style.font_size
                 }}>
                     <p className="title is-4" style={{
                         color: props.card.style.text_color
