@@ -31,7 +31,7 @@ function App({ cardData }) {
           <Routes>
             <Route path="/all" element={<AllCards data={cardData}/>} />
             <Route path="/create" element={<CreateCard />} />
-            <Route path="/mycards" element={<MyCards />} />
+            <Route path="/mycards" element={<MyCards token={token}/>} />
             <Route path="/friends" element={<Friends />} />
             <Route path="/" element={<Login />} />
           </Routes>
