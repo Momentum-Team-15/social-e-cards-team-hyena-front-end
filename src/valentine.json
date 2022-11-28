@@ -172,7 +172,7 @@
 },
 "style": {
     "border_width": "5px",
-    "border": "solid",
+    "border_style": "solid",
     "border_color": "red",
     "background": "danger-light",
     "font": "Courier",

@@ -30,8 +30,8 @@ function App({ cardData }) {
           <Header token={token} setAuth={setAuth} username={username}/>
           <Routes>
             <Route path="/all" element={<AllCards data={cardData}/>} />
-            <Route path="/create" element={<CreateCard />} />
-            <Route path="/mycards" element={<MyCards token={token}/>} />
+            <Route path="/create" element={<CreateCard username={username} data={cardData}/>} />
+            <Route path="/mycards" element={<MyCards data={cardData} username={username} token={token}/>} />
             <Route path="/friends" element={<Friends />} />
             <Route path="/" element={<Login />} />
           </Routes>
