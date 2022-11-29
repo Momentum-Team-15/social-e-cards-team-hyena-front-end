@@ -13,12 +13,15 @@ export const Card = (props) => {
                     <p className="title is-4" style={{
                         color: props.card.style.text_color
                     }}>Corny Cards</p>
+                    <p style={{color:props.card.style.text_color}}>{props.card.info.text_front}</p>
                 </div>
                 <div className="card-back" style={{
                     backgroundColor: props.card.style.background,
-                    color: props.card.style.text_color
+                    color: props.card.style.text_color,
+                    border: `${props.card.style.border_width} ${props.card.style.border_style} ${props.card.style.border_color}`
                 }}>
-                    <p>{props.card.info.text}</p>
+                    <p style={{fontSize: props.card.style.font_size}}
+                    >{props.card.info.text_back}</p>
                 </div>
             </div>
         </div>
