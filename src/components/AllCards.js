@@ -15,8 +15,6 @@ export const AllCards = ({token}) => {
             .then(res => setCards(res.data))
     }, [token])
 
-    console.log(cards)
-
     return (
         <section>
             <h1 className="page-title title is-4 has-text-centered">All Cards</h1>
