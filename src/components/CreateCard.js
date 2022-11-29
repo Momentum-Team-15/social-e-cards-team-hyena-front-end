@@ -4,19 +4,19 @@ import { useState } from 'react'
 export const CreateCard = ({ username, data }) => {
     const [open, setOpen] = useState(null)
     const [colorOfBackground, setColorOfBackground] = useState('white')
-    const [widthOfBorder, setWidthOfBorder] = useState(0)
+    const [widthOfBorder, setWidthOfBorder] = useState(2)
     const [styleOfBorder, setStyleOfBorder] = useState('solid')
     const [colorOfBorder, setColorOfBorder] = useState('black')
     const [sizeOfFont, setSizeOfFont] = useState(16)
     const [familyOfFont, setFamilyOfFont] = useState('sans-serif')
     const [colorOfFont, setColorOfFont] = useState('black')
-    const [textOfCard, setTextOfCard] = useState('')
+    const [frontTextOfCard, setFrontTextOfCard] = useState('')
+    const [backTextOfCard, setBackTextOfCard] = useState('')
     const borderThickness = widthOfBorder + 'px'
     const fontLargeness = sizeOfFont + 'px'
 
     let createContainer = {
         "user": {
-            // "id": `${userId}`,
             "author": `${ username }`
         },
         "style": {
@@ -29,15 +29,26 @@ export const CreateCard = ({ username, data }) => {
             "font_size": `${ fontLargeness }`
         },
         "info": {
-            // "text_front": `${ frontTextOfCard }`,
-            // "text_back": `${ backTextOfCard }`
+            "text_front": `${ frontTextOfCard }`,
+            "text_back": `${ backTextOfCard }`
         }
     }
 
     const handleCreate = () => {
         data.push(createContainer)
-        console.log(data)
+
+        setColorOfBackground('white')
+        setWidthOfBorder(2)
+        setStyleOfBorder('solid')
+        setColorOfBorder('black')
+        setSizeOfFont(16)
+        setFamilyOfFont('sans-serif')
+        setColorOfFont('black')
+        setFrontTextOfCard('')
+        setBackTextOfCard('')
+
     }
+
 
     return (
         <section>
@@ -180,26 +191,44 @@ export const CreateCard = ({ username, data }) => {
 
 
                     <br />
-                    <input className="text-box" type='text' value={textOfCard}
-                        onChange={e => setTextOfCard(e.target.value)}></input>
+                    <p>front text</p>
+                    <input className="text-box" type='text' value={frontTextOfCard}
+                        onChange={e => setFrontTextOfCard(e.target.value)}></input>
+                    <p>back text</p>
+                    <input className="text-box" type='text' value={backTextOfCard}
+                        onChange={e => setBackTextOfCard(e.target.value)}></input>
+
+                    <br /> <br/>              
+                    <button className="button is-info is-medium" onClick={handleCreate}>Create</button>
                 </div>
 
 
-                <div className="create-columns box">
-                    <div className="created-card" style={{
+                <div className="created-card box">
+                <div className="flipping-card">
+                    <div className="card-front" style={{
                         background: colorOfBackground,
                         borderWidth: borderThickness, borderStyle: styleOfBorder, borderColor: colorOfBorder
                     }}>
                         <p style={{
                             fontSize: fontLargeness, textAlign: 'center', fontFamily: familyOfFont, color: colorOfFont,
                             padding: '10px'
-                        }}>{textOfCard}</p>
+                        }}>{frontTextOfCard}</p>
                     </div>
+                    <div className="card-back" style={{
+                        background: colorOfBackground,
+                        borderWidth: borderThickness, borderStyle: styleOfBorder, borderColor: colorOfBorder
+                    }}>
+                        <p style={{
+                            fontSize: fontLargeness, textAlign: 'center', fontFamily: familyOfFont, color: colorOfFont,
+                            padding: '10px'
+                        }}>{backTextOfCard}</p>
+
+                    </div>
+                </div>
                 </div>
 
 
             </div>
-            <button onClick={handleCreate}>Create</button>
 
         </section>
     )

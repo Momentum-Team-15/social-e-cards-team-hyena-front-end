@@ -49,10 +49,16 @@
 }
 .create-columns{
   margin-top: 15px;
+  height: 100%;
 }
 .created-card{
+  margin-top: 15px;
   height: 50vh;
   width: 30vw;
+  perspective: 1000px;
+}
+.created-card:hover .flipping-card {
+  transform: rotateY(180deg);
 }
 .btn{
   margin: 5px auto;
