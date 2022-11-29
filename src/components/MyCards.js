@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { Card } from './Card'
 import { Favorite } from './Favorite';
 
-export const MyCards = ({ data, username, token }) => {
+export const MyCards = ({ token }) => {
     const [cards, setCards] = useState([])
 
     useEffect(() => {
@@ -14,8 +14,6 @@ export const MyCards = ({ data, username, token }) => {
         })
             .then(res => setCards(res.data))
     }, [token])
-
-    console.log(cards)
 
     return (
         <div>
