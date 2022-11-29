@@ -5,7 +5,7 @@ export const Header = ({ setAuth, username, token }) => {
 
     const handleLogout = () => {
         setAuth(null, '')
-        axios.post('https://hyena-ecards.onrender.com/auth/token/logout', {},
+        axios.post('https://ecard-web-service.onrender.com/auth/token/logout/', {},
             { headers: { Authorization: `Token ${token}`, }, })
     }
 

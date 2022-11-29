@@ -9,7 +9,7 @@ export const Login = ({ setAuth}) => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('https://hyena-ecards.onrender.com/auth/token/login', {
+        axios.post('https://ecard-web-service.onrender.com/auth/token/login/', {
             username: username,
             password: password})
         .then((res) => {
