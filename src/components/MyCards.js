@@ -1,17 +1,13 @@
-import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { Card } from './Card'
-import { Favorite } from './Favorite';
+import { Favorite } from './Favorite'
+import { requestUsersCards } from './Requests'
 
 export const MyCards = ({ token }) => {
     const [cards, setCards] = useState([])
 
     useEffect(() => {
-        axios.get('https://ecard-web-service.onrender.com/cards/user/', {
-            headers: {
-                Authorization: `Token ${token}`,
-            }
-        })
+        requestUsersCards(token)
             .then(res => setCards(res.data))
     }, [token])
 

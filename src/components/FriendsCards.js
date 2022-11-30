@@ -1,15 +1,11 @@
-import axios from "axios"
 import { useEffect, useState } from 'react'
+import { requestFriends } from './Requests'
 
 export const Friends = ({ token }) => {
     const [friendList, setFriendList] = useState([])
 
     useEffect(() => {
-        axios.get('https://ecard-web-service.onrender.com/friends/', {
-            headers: {
-                Authorization: `Token ${token}`,
-            }
-        })
+        requestFriends(token)
             .then(res => setFriendList(res.data))
     }, [token])
 

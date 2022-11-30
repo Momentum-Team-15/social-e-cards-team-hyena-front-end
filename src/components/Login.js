@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import axios from "axios";
+import { requestLogin } from "./Requests";
 
 export const Login = ({ setAuth}) => {
     const [username, setUsername] = useState('')
@@ -9,9 +9,7 @@ export const Login = ({ setAuth}) => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('https://ecard-web-service.onrender.com/auth/token/login/', {
-            username: username,
-            password: password})
+        requestLogin(username, password)
         .then((res) => {
             const token = res.data.auth_token
             setAuth(token, username)
