@@ -174,7 +174,7 @@
     "border_width": "5px",
     "border_style": "solid",
     "border_color": "red",
-    "background": "danger-light",
+    "background": "",
     "font": "Courier",
     "text_color": ""
 },
