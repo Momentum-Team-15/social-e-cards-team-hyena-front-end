@@ -49,3 +49,11 @@ export const requestCreateCard = (token) => {
         { headers: { Authorization: `Token ${token}`} })
         return response
 }
+
+export const requestUsersCards = (token) => {
+    const url = 'https://ecard-web-service.onrender.com/cards/user'
+
+    const response = axios.get(url, 
+        { headers: { Authorization: `Token ${token}`} })
+        return response
+}
