@@ -3,30 +3,24 @@ import { useState } from 'react'
 
 export const CreateCard = ({ username, data }) => {
     const [open, setOpen] = useState(null)
-    const [colorOfBackground, setColorOfBackground] = useState('white')
-    const [widthOfBorder, setWidthOfBorder] = useState(2)
-    const [styleOfBorder, setStyleOfBorder] = useState('solid')
-    const [colorOfBorder, setColorOfBorder] = useState('black')
-    const [sizeOfFont, setSizeOfFont] = useState(16)
-    const [familyOfFont, setFamilyOfFont] = useState('sans-serif')
-    const [colorOfFont, setColorOfFont] = useState('black')
+    const [colorOfBackground, setColorOfBackground] = useState('WHITE')
+    const [styleOfBorder, setStyleOfBorder] = useState('SOLID')
+    const [colorOfBorder, setColorOfBorder] = useState('BLACK')
+    const [familyOfFont, setFamilyOfFont] = useState('ARIAL')
+    const [colorOfFont, setColorOfFont] = useState('BLACK')
     const [frontTextOfCard, setFrontTextOfCard] = useState('')
     const [backTextOfCard, setBackTextOfCard] = useState('')
-    const borderThickness = widthOfBorder + 'px'
-    const fontLargeness = sizeOfFont + 'px'
 
     let createContainer = {
         "user": {
             "author": `${ username }`
         },
         "style": {
-            "border_width": `${ borderThickness }`,
             "border_style": `${ styleOfBorder }`,
             "border_color": `${ colorOfBorder }`,
             "background": `${ colorOfBackground }`,
             "font": `${ familyOfFont }`,
             "text_color": `${ colorOfFont }`,
-            "font_size": `${ fontLargeness }`
         },
         "info": {
             "text_front": `${ frontTextOfCard }`,
@@ -38,10 +32,8 @@ export const CreateCard = ({ username, data }) => {
         data.push(createContainer)
 
         setColorOfBackground('white')
-        setWidthOfBorder(2)
         setStyleOfBorder('solid')
         setColorOfBorder('black')
-        setSizeOfFont(16)
         setFamilyOfFont('sans-serif')
         setColorOfFont('black')
         setFrontTextOfCard('')
@@ -61,54 +53,47 @@ export const CreateCard = ({ username, data }) => {
                     {open === 1 && (
                         <ul className="ulbtn box menu">
                             <li className="menu-item">
-                                <button className="btn button" onClick={() => { setColorOfBackground('#FFFFFF'); setOpen(false) }}>white</button>
+                                <button className="btn button" style={{ background: 'snow' }} onClick={() => { setColorOfBackground('WHITE'); setOpen(false) }}>white</button>
                             </li>
                             <li className="menu-item">
-                                <button className="btn button is-danger" onClick={() => { setColorOfBackground('#FF3860'); setOpen(false) }}>red</button>
+                                <button className="btn button" style={{ background: 'red', color: 'white'  }} onClick={() => { setColorOfBackground('RED'); setOpen(false) }}>red</button>
                             </li>
                             <li className="menu-item">
-                                <button className="btn button is-info" onClick={() => { setColorOfBackground('#209CEE'); setOpen(false) }}>blue</button>
+                                <button className="btn button" style={{ background: 'blue', color: 'white'  }} onClick={() => { setColorOfBackground('BLUE'); setOpen(false) }}>blue</button>
                             </li>
                             <li className="menu-item">
-                                <button className="btn button is-warning" onClick={() => { setColorOfBackground('#FFDD57'); setOpen(false) }}>yellow</button>
+                                <button className="btn button" style={{ background: 'yellow' }} onClick={() => { setColorOfBackground('YELLOW'); setOpen(false) }}>yellow</button>
                             </li>
                             <li className="menu-item">
-                                <button className="btn button has-background-danger-light" onClick={() => { setColorOfBackground('#FEECF0'); setOpen(false) }}>pink</button>
+                                <button className="btn button" style={{ background: 'orange' }} onClick={() => { setColorOfBackground('ORANGE'); setOpen(false) }}>orange</button>
                             </li>
                             <li className="menu-item">
-                                <button className="btn button has-background-warning-light" onClick={() => { setColorOfBackground('#FFFBEB'); setOpen(false) }}>light yellow</button>
+                                <button className="btn button" style={{ background: 'green', color: 'white'  }} onClick={() => { setColorOfBackground('GREEN'); setOpen(false) }}>green</button>
                             </li>
                             <li className="menu-item">
-                                <button className="btn button has-background-info-light" onClick={() => { setColorOfBackground('#EEF6FC'); setOpen(false) }}>light blue</button>
+                                <button className="btn button" style={{ background: 'purple', color: 'white'  }} onClick={() => { setColorOfBackground('PURPLE'); setOpen(false) }}>purple</button>
+                            </li>
+                            <li className="menu-item">
+                                <button className="btn button" style={{ background: 'black', color: 'white' }} onClick={() => { setColorOfBackground('BLACK'); setOpen(false) }}>black</button>
                             </li>
                         </ul>
                     )}
-
-
-                    <button className="create-option button" onClick={() => { open === 2 ? setOpen(null) : setOpen(2) }}>border width</button>
-                    {open === 2 && (
-                        <ul className="ulbtn box menu">
-                            <input className="option-box" type="range" value={widthOfBorder} min={0} max={15}
-                                onChange={e => setWidthOfBorder(e.target.value)}></input>
-                        </ul>
-                    )}
-
 
                     <br />
                     <button className="create-option button" onClick={() => { open === 3 ? setOpen(null) : setOpen(3) }}>border style</button>
                     {open === 3 && (
                         <ul className="ulbtn box menu">
                             <li className="menu-item">
-                                <button className="btn button" style={{ borderWidth: '4px', borderStyle: 'solid' }} onClick={() => { setStyleOfBorder('solid'); setOpen(false) }}>solid</button>
+                                <button className="btn button" style={{ borderWidth: '4px', borderStyle: 'solid' }} onClick={() => { setStyleOfBorder('SOLID'); setOpen(false) }}>solid</button>
                             </li>
                             <li className="menu-item">
-                                <button className="btn button" style={{ borderWidth: '4px', borderStyle: 'dotted' }} onClick={() => { setStyleOfBorder('dotted'); setOpen(false) }}>dotted</button>
+                                <button className="btn button" style={{ borderWidth: '4px', borderStyle: 'dotted' }} onClick={() => { setStyleOfBorder('DOTTED'); setOpen(false) }}>dotted</button>
                             </li>
                             <li className="menu-item">
-                                <button className="btn button" style={{ borderWidth: '4px', borderStyle: 'dashed' }} onClick={() => { setStyleOfBorder('dashed'); setOpen(false) }}>dashed</button>
+                                <button className="btn button" style={{ borderWidth: '4px', borderStyle: 'groove' }} onClick={() => { setStyleOfBorder('GROOVE'); setOpen(false) }}>groove</button>
                             </li>
                             <li className="menu-item">
-                                <button className="btn button" style={{ borderWidth: '4px', borderStyle: 'double' }} onClick={() => { setStyleOfBorder('double'); setOpen(false) }}>double</button>
+                                <button className="btn button" style={{ borderWidth: '4px', borderStyle: 'double' }} onClick={() => { setStyleOfBorder('DOUBLE'); setOpen(false) }}>double</button>
                             </li>
                         </ul>
                     )}
@@ -119,49 +104,47 @@ export const CreateCard = ({ username, data }) => {
                     {open === 4 && (
                         <ul className="ulbtn box menu">
                             <li className="menu-item">
-                                <button className="btn button" style={{ borderWidth: '4px', borderColor: 'black' }} onClick={() => { setColorOfBorder('black'); setOpen(false) }}>black</button>
+                                <button className="btn button" style={{ borderWidth: '4px', borderColor: 'snow' }} onClick={() => { setColorOfBorder('WHITE'); setOpen(false) }}>white</button>
                             </li>
                             <li className="menu-item">
-                                <button className="btn button" style={{ borderWidth: '4px', borderColor: '#CC0F35' }} onClick={() => { setColorOfBorder('#CC0F35'); setOpen(false) }}>dark red</button>
+                                <button className="btn button" style={{ borderWidth: '4px', borderColor: 'red' }} onClick={() => { setColorOfBorder('RED'); setOpen(false) }}>red</button>
                             </li>
                             <li className="menu-item">
-                                <button className="btn button" style={{ borderWidth: '4px', borderColor: '#1D72AA' }} onClick={() => { setColorOfBorder('#1D72AA'); setOpen(false) }}>dark blue</button>
+                                <button className="btn button" style={{ borderWidth: '4px', borderColor: 'blue' }} onClick={() => { setColorOfBorder('BLUE'); setOpen(false) }}>blue</button>
                             </li>
                             <li className="menu-item">
-                                <button className="btn button" style={{ borderWidth: '4px', borderColor: '#947600' }} onClick={() => { setColorOfBorder('#947600'); setOpen(false) }}>dark yellow</button>
+                                <button className="btn button" style={{ borderWidth: '4px', borderColor: 'yellow' }} onClick={() => { setColorOfBorder('YELLOW'); setOpen(false) }}>yellow</button>
+                            </li>
+                            <li className="menu-item">
+                                <button className="btn button" style={{ borderWidth: '4px', borderColor: 'orange' }} onClick={() => { setColorOfBorder('ORANGE'); setOpen(false) }}>orange</button>
+                            </li>
+                            <li className="menu-item">
+                                <button className="btn button" style={{ borderWidth: '4px', borderColor: 'green' }} onClick={() => { setColorOfBorder('GREEN'); setOpen(false) }}>green</button>
+                            </li>
+                            <li className="menu-item">
+                                <button className="btn button" style={{ borderWidth: '4px', borderColor: 'purple' }} onClick={() => { setColorOfBorder('PURPLE'); setOpen(false) }}>purple</button>
+                            </li>
+                                                        <li className="menu-item">
+                                <button className="btn button" style={{ borderWidth: '4px', borderColor: 'black' }} onClick={() => { setColorOfBorder('BLACK'); setOpen(false) }}>black</button>
                             </li>
                         </ul>
                     )}
-
-
-                    <br />
-                    <button className="create-option button" onClick={() => { open === 5 ? setOpen(null) : setOpen(5) }}>text size</button>
-                    {open === 5 && (
-                        <ul className="ulbtn box menu">
-                            <input className="option-box" type="range" value={sizeOfFont} min={16} max={48}
-                                onChange={e => setSizeOfFont(e.target.value)}></input>
-                        </ul>
-                    )}
-
 
                     <br />
                     <button className="create-option button" onClick={() => { open === 6 ? setOpen(null) : setOpen(6) }}>text family</button>
                     {open === 6 && (
                         <ul className="ulbtn box menu">
                             <li className="menu-item">
-                                <button className="btn button" style={{ fontFamily: 'sans-serif' }} onClick={() => { setFamilyOfFont('sans-serif'); setOpen(false) }}>sans-serif</button>
+                                <button className="btn button" style={{ fontFamily: 'ubuntu' }} onClick={() => { setFamilyOfFont('UBUNTU'); setOpen(false) }}>ubuntu</button>
                             </li>
                             <li className="menu-item">
-                                <button className="btn button" style={{ fontFamily: 'serif' }} onClick={() => { setFamilyOfFont('serif'); setOpen(false) }}>serif</button>
+                                <button className="btn button" style={{ fontFamily: 'arial' }} onClick={() => { setFamilyOfFont('ARIAL'); setOpen(false) }}>arial</button>
                             </li>
                             <li className="menu-item">
-                                <button className="btn button" style={{ fontFamily: 'monospace' }} onClick={() => { setFamilyOfFont('monospace'); setOpen(false) }}>monospace</button>
+                                <button className="btn button" style={{ fontFamily: 'merriweather' }} onClick={() => { setFamilyOfFont('MERRIWEATHER'); setOpen(false) }}>merriweather</button>
                             </li>
                             <li className="menu-item">
-                                <button className="btn button" style={{ fontFamily: 'cursive' }} onClick={() => { setFamilyOfFont('cursive'); setOpen(false) }}>cursive</button>
-                            </li>
-                            <li className="menu-item">
-                                <button className="btn button" style={{ fontFamily: 'fantasy' }} onClick={() => { setFamilyOfFont('fantasy'); setOpen(false) }}>fantasy</button>
+                                <button className="btn button" style={{ fontFamily: 'raleway' }} onClick={() => { setFamilyOfFont('RALEWAY'); setOpen(false) }}>raleway</button>
                             </li>
                         </ul>
                     )}
@@ -172,19 +155,28 @@ export const CreateCard = ({ username, data }) => {
                     {open === 7 && (
                         <ul className="ulbtn box menu">
                             <li className="menu-item">
-                                <button className="btn button" onClick={() => { setColorOfFont('black'); setOpen(false) }}>black</button>
+                                <button className="btn button" onClick={() => { setColorOfFont('WHITE'); setOpen(false) }}>white</button>
                             </li>
                             <li className="menu-item">
-                                <button className="btn button" onClick={() => { setColorOfFont('white'); setOpen(false) }}>white</button>
+                                <button className="btn button" style={{ color: 'red' }} onClick={() => { setColorOfFont('RED'); setOpen(false) }}>red</button>
                             </li>
                             <li className="menu-item">
-                                <button className="btn button" style={{ color: '#CC0F35' }} onClick={() => { setColorOfFont('#CC0F35'); setOpen(false) }}>dark red</button>
+                                <button className="btn button" style={{ color: 'blue' }} onClick={() => { setColorOfFont('BLUE'); setOpen(false) }}>blue</button>
                             </li>
                             <li className="menu-item">
-                                <button className="btn button" style={{ color: '#1D72AA' }} onClick={() => { setColorOfFont('#1D72AA'); setOpen(false) }}>dark blue</button>
+                                <button className="btn button" style={{ color: 'yellow' }} onClick={() => { setColorOfFont('YELLOW'); setOpen(false) }}>yellow</button>
                             </li>
                             <li className="menu-item">
-                                <button className="btn button" style={{ color: '#947600' }} onClick={() => { setColorOfFont('#947600'); setOpen(false) }}>dark yellow</button>
+                                <button className="btn button" style={{ color: 'orange' }} onClick={() => { setColorOfFont('ORANGE'); setOpen(false) }}>orange</button>
+                            </li>
+                            <li className="menu-item">
+                                <button className="btn button" style={{ color: 'green' }} onClick={() => { setColorOfFont('GREEN'); setOpen(false) }}>green</button>
+                            </li>
+                            <li className="menu-item">
+                                <button className="btn button" style={{ color: 'purple' }} onClick={() => { setColorOfFont('PURPLE'); setOpen(false) }}>purple</button>
+                            </li>
+                            <li className="menu-item">
+                                <button className="btn button" style={{ color: 'black' }} onClick={() => { setColorOfFont('BLACK'); setOpen(false) }}>black</button>
                             </li>
                         </ul>
                     )}
@@ -207,19 +199,19 @@ export const CreateCard = ({ username, data }) => {
                 <div className="flipping-card">
                     <div className="card-front" style={{
                         background: colorOfBackground,
-                        borderWidth: borderThickness, borderStyle: styleOfBorder, borderColor: colorOfBorder
+                        borderStyle: styleOfBorder, borderColor: colorOfBorder
                     }}>
                         <p style={{
-                            fontSize: fontLargeness, textAlign: 'center', fontFamily: familyOfFont, color: colorOfFont,
+                            textAlign: 'center', fontFamily: familyOfFont, color: colorOfFont,
                             padding: '10px'
                         }}>{frontTextOfCard}</p>
                     </div>
                     <div className="card-back" style={{
                         background: colorOfBackground,
-                        borderWidth: borderThickness, borderStyle: styleOfBorder, borderColor: colorOfBorder
+                        borderStyle: styleOfBorder, borderColor: colorOfBorder
                     }}>
                         <p style={{
-                            fontSize: fontLargeness, textAlign: 'center', fontFamily: familyOfFont, color: colorOfFont,
+                            textAlign: 'center', fontFamily: familyOfFont, color: colorOfFont,
                             padding: '10px'
                         }}>{backTextOfCard}</p>
 
