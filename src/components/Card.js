@@ -11,28 +11,29 @@ export const Card = (props) => {
 
 
     return (
-        <div onClick={handleDetail} className="flip-card">
-            <div className="flipping-card">
-                <div className="card-front" style={{
-                    border: `${props.card.border_style} ${props.card.border_color}`,
-                    backgroundColor: props.card.background_color,
-                }}>
-                    <p className="card-sizing" style={{ color: props.card.font_color }}>{props.card.outer_msg}</p>
-                </div>
-                <div className="card-back" style={{
-                    backgroundColor: props.card.background_color,
-                    border: `${props.card.border_style} ${props.card.border_color}`
-                }}>
-                    <p style={{ color: props.card.font_color }}>{props.card.inner_msg}</p>
+        <div>
+            <div onClick={handleDetail} className="flip-card">
+                <div className="flipping-card">
+                    <div className="card-front" style={{
+                        border: `${props.card.border_style} ${props.card.border_color}`,
+                        backgroundColor: props.card.background_color,
+                    }}>
+                        <p className="card-sizing" style={{ color: props.card.font_color }}>{props.card.outer_msg}</p>
+                    </div>
+                    <div className="card-back" style={{
+                        backgroundColor: props.card.background_color,
+                        border: `${props.card.border_style} ${props.card.border_color}`
+                    }}>
+                        <p style={{ color: props.card.font_color }}>{props.card.inner_msg}</p>
+                    </div>
                 </div>
             </div>
             {open && (
-                <div className="modal is-active">
-                    <div className="modal-background"></div>
-                    <div className="modal-content">
-                        <div className="box">TEST WORDS</div>
+                <div className="deets">
+                    <div>
+                        <button onClick={() => setOpen(null)}>X</button>
+                        <p>{`${props.card.user} made this card`}</p>
                     </div>
-                    <button className="modal-close is-large"></button>
                 </div>
             )}
         </div>
