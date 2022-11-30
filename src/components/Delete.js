@@ -1,8 +1,9 @@
+import { requestDeleteCard } from "./Requests"
 
 
+export const Delete = ({ token, cardId }) => {
 
-export const Delete = ({}) => {
     return (
-<button className="button is-small is-danger">DELETE</button>
+        <button onClick={() => requestDeleteCard(token, cardId)} className="button is-small is-danger">DELETE</button>
     )
 }

@@ -19,10 +19,10 @@ export const MyCards = ({ token, username }) => {
                 {cards.map((card, idx) => (
                     <div key={idx}>
                         <div className="card">
-                            <Card card={card} username={username} />
+                            <Card token={token} card={card} username={username} />
                             <div className="cardlist">
                                 <p>by {card.user}</p>
-                                {username === card.user ? (<Delete />):(null)}
+                                {username === card.user ? (<Delete token={token} cardId={card.id} />):(null)}
                                 <Favorite />
                             </div>
                         </div>

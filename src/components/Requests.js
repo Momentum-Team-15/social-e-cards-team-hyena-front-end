@@ -42,6 +42,13 @@ export const requestSingleCard = (token, cardId) => {
         return response
 }
 
+export const requestDeleteCard = (token, cardId) => {
+    const url = `https://ecard-web-service.onrender.com/cards/${cardId}`
+
+    axios.delete(url,
+        { headers: { Authorization: `Token ${token}`} })
+}
+
 export const requestCreateCard = (token, createContainer) => {
     const url = 'https://ecard-web-service.onrender.com/cards/user/'
 

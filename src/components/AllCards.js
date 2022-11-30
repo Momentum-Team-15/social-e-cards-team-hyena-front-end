@@ -18,10 +18,10 @@ export const AllCards = ({ token, username }) => {
             <div className="card-grid">
                 {cards.map((card, idx) => (
                     <div className="card" key={idx}>
-                        <Card card={card} username={username} />
+                        <Card token={token} card={card} username={username} />
                         <div className="cardlist">
                             <p>by {card.user}</p>
-                            {username === card.user ? (<Delete />):(null)}
+                            {username === card.user ? (<Delete token={token} cardId={card.id} />):(null)}
                             <Favorite />
                         </div>
                     </div>
