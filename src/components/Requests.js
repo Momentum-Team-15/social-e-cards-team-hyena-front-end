@@ -43,12 +43,13 @@ export const requestSingleCard = (token, cardId) => {
 }
 
 export const requestCreateCard = (token, createContainer) => {
-    const url = 'https://ecard-web-service.onrender.com/cards/user'
+    const url = 'https://ecard-web-service.onrender.com/cards/user/'
 
-    const response = axios.post(url, 
-        {headers: { Authorization: `Token ${token}`}, createContainer})
-        return response
+    axios.post(url, 
+        createContainer,
+        { headers: {Authorization: `Token ${token}`}})
 }
+
 
 export const requestUsersCards = (token) => {
     const url = 'https://ecard-web-service.onrender.com/cards/user'

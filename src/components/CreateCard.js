@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { requestCreateCard } from './Requests'
+import axios from 'axios'
+
 
 
 export const CreateCard = ({token}) => {
@@ -9,33 +10,41 @@ export const CreateCard = ({token}) => {
     const [colorOfBorder, setColorOfBorder] = useState('BLACK')
     const [familyOfFont, setFamilyOfFont] = useState('ARIAL')
     const [colorOfFont, setColorOfFont] = useState('BLACK')
-    const [frontTextOfCard, setFrontTextOfCard] = useState('')
-    const [backTextOfCard, setBackTextOfCard] = useState('')
+    const [frontTextOfCard, setFrontTextOfCard] = useState('empty')
+    const [backTextOfCard, setBackTextOfCard] = useState('empty')
+    const [category, setCategory] = useState('none')
+   
 
     let createContainer = {
+        "title": `${category}`,
         "border_style": `${styleOfBorder}`,
         "border_color": `${colorOfBorder}`,
         "font_family": `${familyOfFont}`,
         "font_color": `${colorOfFont}`,
+        "text_alignment": "CENTER",
         "outer_msg": `${frontTextOfCard}`,
         "inner_msg": `${backTextOfCard}`,
         "background_color": `${colorOfBackground}`,
         "published": true
     }
 
-    const handleCreate = () => {
-        requestCreateCard(token, createContainer)
+    const handleCreate = (event) => {
+        event.preventDefault()
 
-        setColorOfBackground('white')
-        setStyleOfBorder('solid')
-        setColorOfBorder('black')
-        setFamilyOfFont('sans-serif')
-        setColorOfFont('black')
+        axios.post('https://ecard-web-service.onrender.com/cards/user/', 
+            createContainer,
+            { headers: { Authorization: `Token ${token}`}})
+    
+        console.log(createContainer)
+        setColorOfBackground('WHITE')
+        setStyleOfBorder('SOLID')
+        setColorOfBorder('BLACK')
+        setFamilyOfFont('ARIAL')
+        setColorOfFont('BLACK')
         setFrontTextOfCard('')
         setBackTextOfCard('')
 
     }
-
 
     return (
         <section>
@@ -43,6 +52,9 @@ export const CreateCard = ({token}) => {
             <div className="columns is-flex is-justify-content-space-around">
                 <div className="create-columns column is-3 box has-text-centered">
 
+                <p>title</p>
+                <input className="text-box" type='text' value={category}
+                    onChange={e => setCategory(e.target.value)}></input>
 
                     <button className="create-option button" onClick={() => { open === 1 ? setOpen(null) : setOpen(1) }}>background color</button>
                     {open === 1 && (
@@ -179,7 +191,7 @@ export const CreateCard = ({token}) => {
 
                     <br />
                     <p>front text</p>
-                    <input className="text-box" type='text' value={frontTextOfCard}
+                    <input className="text-box" type='text' value={frontTextOfCard} 
                         onChange={e => setFrontTextOfCard(e.target.value)}></input>
                     <p>back text</p>
                     <input className="text-box" type='text' value={backTextOfCard}
@@ -187,8 +199,6 @@ export const CreateCard = ({token}) => {
 
                     <br /> <br/>              
                     <button className="button is-info is-medium" onClick={handleCreate}>Create</button>
-                    {console.log(createContainer)}
-                    {console.log(token)}
                 </div>
 
 
@@ -196,7 +206,7 @@ export const CreateCard = ({token}) => {
                 <div className="flipping-card">
                     <div className="card-front" style={{
                         background: colorOfBackground,
-                        borderStyle: styleOfBorder, borderColor: colorOfBorder
+                        border: `6px ${styleOfBorder} ${colorOfBorder}`
                     }}>
                         <p style={{
                             textAlign: 'center', fontFamily: familyOfFont, color: colorOfFont,
@@ -205,7 +215,7 @@ export const CreateCard = ({token}) => {
                     </div>
                     <div className="card-back" style={{
                         background: colorOfBackground,
-                        borderStyle: styleOfBorder, borderColor: colorOfBorder
+                        border: `6px ${styleOfBorder} ${colorOfBorder}`
                     }}>
                         <p style={{
                             textAlign: 'center', fontFamily: familyOfFont, color: colorOfFont,
