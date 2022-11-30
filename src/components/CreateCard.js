@@ -1,7 +1,5 @@
 import { useState } from 'react'
-import axios from 'axios'
-
-
+import { requestCreateCard } from './Requests'
 
 export const CreateCard = ({token}) => {
     const [open, setOpen] = useState(null)
@@ -31,9 +29,7 @@ export const CreateCard = ({token}) => {
     const handleCreate = (event) => {
         event.preventDefault()
 
-        axios.post('https://ecard-web-service.onrender.com/cards/user/', 
-            createContainer,
-            { headers: { Authorization: `Token ${token}`}})
+        requestCreateCard(token, createContainer)
     
         console.log(createContainer)
         setColorOfBackground('WHITE')

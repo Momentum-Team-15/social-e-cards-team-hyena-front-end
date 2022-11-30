@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { requestLogout } from "./Requests";
 
 export const Header = ({ setAuth, username, token }) => {
 
     const handleLogout = () => {
         setAuth(null, '')
-        axios.post('https://ecard-web-service.onrender.com/auth/token/logout/', {},
-            { headers: { Authorization: `Token ${token}`, }, })
+        requestLogout(token)
     }
 
     return (
