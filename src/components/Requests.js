@@ -42,11 +42,11 @@ export const requestSingleCard = (token, cardId) => {
         return response
 }
 
-export const requestCreateCard = (token) => {
+export const requestCreateCard = (token, createContainer) => {
     const url = 'https://ecard-web-service.onrender.com/cards/user'
 
     const response = axios.post(url, 
-        { headers: { Authorization: `Token ${token}`} })
+        {headers: { Authorization: `Token ${token}`}, createContainer})
         return response
 }
 

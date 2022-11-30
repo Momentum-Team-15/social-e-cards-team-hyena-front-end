@@ -1,7 +1,8 @@
 import { useState } from 'react'
+import { requestCreateCard } from './Requests'
 
 
-export const CreateCard = ({ username, data }) => {
+export const CreateCard = ({token}) => {
     const [open, setOpen] = useState(null)
     const [colorOfBackground, setColorOfBackground] = useState('WHITE')
     const [styleOfBorder, setStyleOfBorder] = useState('SOLID')
@@ -12,24 +13,18 @@ export const CreateCard = ({ username, data }) => {
     const [backTextOfCard, setBackTextOfCard] = useState('')
 
     let createContainer = {
-        "user": {
-            "author": `${ username }`
-        },
-        "style": {
-            "border_style": `${ styleOfBorder }`,
-            "border_color": `${ colorOfBorder }`,
-            "background": `${ colorOfBackground }`,
-            "font": `${ familyOfFont }`,
-            "text_color": `${ colorOfFont }`,
-        },
-        "info": {
-            "text_front": `${ frontTextOfCard }`,
-            "text_back": `${ backTextOfCard }`
-        }
+        "border_style": `${styleOfBorder}`,
+        "border_color": `${colorOfBorder}`,
+        "font_family": `${familyOfFont}`,
+        "font_color": `${colorOfFont}`,
+        "outer_msg": `${frontTextOfCard}`,
+        "inner_msg": `${backTextOfCard}`,
+        "background_color": `${colorOfBackground}`,
+        "published": true
     }
 
     const handleCreate = () => {
-        data.push(createContainer)
+        requestCreateCard(token, createContainer)
 
         setColorOfBackground('white')
         setStyleOfBorder('solid')
@@ -192,6 +187,8 @@ export const CreateCard = ({ username, data }) => {
 
                     <br /> <br/>              
                     <button className="button is-info is-medium" onClick={handleCreate}>Create</button>
+                    {console.log(createContainer)}
+                    {console.log(token)}
                 </div>
 
 
