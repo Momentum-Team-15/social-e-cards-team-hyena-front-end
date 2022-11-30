@@ -17,8 +17,8 @@ export const Friends = ({ token }) => {
 
     return (<div>
         <h1 className="page-title title is-4 has-text-centered">Friends</h1>
-        <div className="card-grid">
-            <div>{friendList.map((friend, idx) => (
+        <div>
+            <div className="friends">{friendList.map((friend, idx) => (
                 <div key={idx}>
                     <div className="card">
                         <p>{friend.friend}</p>
