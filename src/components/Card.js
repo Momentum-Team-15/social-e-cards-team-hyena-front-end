@@ -28,11 +28,18 @@ export const Card = (props) => {
                     </div>
                 </div>
             </div>
+
             {open && (
                 <div className="deets">
-                    <div>
-                        <button onClick={() => setOpen(null)}>X</button>
-                        <p>{`${props.card.user} made this card`}</p>
+                    <button className="is-align-items-flex-end" onClick={() => setOpen(null)}>X</button>
+                    <p>{`This card was made by ${props.card.user}`}</p>
+                    <div className="flipping-card">
+                        <div className="card-front" style={{
+                            border: `${props.card.border_style} ${props.card.border_color}`,
+                            backgroundColor: props.card.background_color,
+                        }}>
+                            <p className="card-sizing" style={{ color: props.card.font_color }}>{props.card.outer_msg}</p>
+                        </div>
                     </div>
                 </div>
             )}
