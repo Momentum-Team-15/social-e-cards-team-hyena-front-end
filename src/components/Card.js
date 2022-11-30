@@ -1,18 +1,13 @@
 import { useState } from "react"
+import { Modal } from "./Modal"
 
 
 export const Card = (props) => {
-    const [open, setOpen] = useState(null)
-
-    const handleDetail = () => {
-        { open === props.card.id ? setOpen(null) : setOpen(props.card.id) }
-    }
-    console.log(open)
-
+    const [open, setOpen] = useState(false)
 
     return (
         <div>
-            <div onClick={handleDetail} className="flip-card">
+            <div onClick={() => setOpen(true)} className="flip-card">
                 <div className="flipping-card">
                     <div className="card-front" style={{
                         border: `${props.card.border_style} ${props.card.border_color}`,
@@ -29,7 +24,12 @@ export const Card = (props) => {
                 </div>
             </div>
 
-            {open && (
+
+                <Modal 
+                open={open} 
+                close={() => {
+                    setOpen(false)
+                }}>
                 <div className="deets">
                     <button className="is-align-items-flex-end" onClick={() => setOpen(null)}>X</button>
                     <p>{`This card was made by ${props.card.user}`}</p>
@@ -42,7 +42,7 @@ export const Card = (props) => {
                         </div>
                     </div>
                 </div>
-            )}
+                </Modal>
         </div>
     )
 }
