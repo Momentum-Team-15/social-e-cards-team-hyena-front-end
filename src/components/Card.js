@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Modal } from "./Modal"
+import { Delete } from "./Delete"
 
 
 export const Card = (props) => {
@@ -24,17 +25,19 @@ export const Card = (props) => {
                 </div>
             </div>
 
-
                 <Modal 
                 open={open} 
                 close={() => {
                     setOpen(false)
                 }}>
                 <div className="deets">
-                    <button className="is-align-items-flex-end" onClick={() => setOpen(null)}>X</button>
+                    <div className="is-flex is-justify-content-space-around">
+                    <button onClick={() => setOpen(null)}>X</button>
                     <p>{`This card was made by ${props.card.user}`}</p>
+                    <Delete />
+                    </div>
                     <div className="flipping-card">
-                        <div className="card-front" style={{
+                        <div className="card-detail" style={{
                             border: `${props.card.border_style} ${props.card.border_color}`,
                             backgroundColor: props.card.background_color,
                         }}>
