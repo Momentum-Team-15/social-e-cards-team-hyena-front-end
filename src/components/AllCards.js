@@ -3,7 +3,7 @@ import { Card } from './Card'
 import { Favorite } from './Favorite';
 import { requestAllCards } from './Requests';
 
-export const AllCards = ({token}) => {
+export const AllCards = ({ token }) => {
     const [cards, setCards] = useState([])
 
     useEffect(() => {
@@ -17,7 +17,7 @@ export const AllCards = ({token}) => {
             <div className="card-grid">
                 {cards.map((card, idx) => (
                     <div className="card" key={idx}>
-                        <Card card={card}/>
+                        <Card card={card} />
                         <div className="cardlist">
                             <p>by {card.user}</p>
                             <Favorite />
