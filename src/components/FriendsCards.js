@@ -1,8 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from 'react'
 
-
-
 export const Friends = ({ token }) => {
     const [friendList, setFriendList] = useState([])
 
