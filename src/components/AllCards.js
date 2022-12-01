@@ -21,8 +21,10 @@ export const AllCards = ({ token, username }) => {
                         <Card token={token} card={card} username={username} />
                         <div className="cardlist">
                             <p>by {card.user}</p>
-                            {username === card.user ? (<Delete token={token} cardId={card.id} />):(null)}
+                            <div className="is-flex">
+                            {username === card.user && (<Delete token={token} cardId={card.id} />)}
                             <Favorite />
+                            </div>
                         </div>
                     </div>
                 ))}

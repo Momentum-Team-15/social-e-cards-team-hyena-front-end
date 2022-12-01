@@ -23,8 +23,10 @@ export const MyCards = ({ token, username }) => {
                             <Card token={token} card={card} username={username} />
                             <div className="cardlist">
                                 <p>by {card.user}</p>
+                                <div className="is-flex">
                                 {username === card.user ? (<Delete token={token} cardId={card.id} />):(null)}
                                 <Favorite />
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -1,12 +1,12 @@
 import axios from 'axios'
 
 export const requestNewUser = (username, password) => {
-    const url = 'https://ecard-web-service.onrender.com/auth/users'
+    const url = 'https://ecard-web-service.onrender.com/auth/users/'
 
     const response = axios.post(url, {
         username: username,
         password: password})
-    return response
+        return response
 }
 
 export const requestLogin = (username, password) => {
@@ -15,7 +15,7 @@ export const requestLogin = (username, password) => {
     const response = axios.post(url, {
         username: username,
         password: password})
-    return response
+        return response
 }
 
 export const requestLogout = (token) => {

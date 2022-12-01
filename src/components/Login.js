@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
 import { requestLogin } from "./Requests";
 
@@ -32,11 +32,12 @@ export const Login = ({ setAuth}) => {
                     <input className="input" type="password" placeholder="password" 
                     onChange={(e) => setPassword(e.target.value)}/>
                 </div>
-                <div className="field">
-                    <p className="control">
+                <div className="field is-flex is-justify-content-space-between">
+
                         <button className='button has-background-danger-light' type="submit"
-                            onClick={handleSubmit}>Log In</button>
-                    </p>
+                            onClick={handleSubmit}>Log In</button>  
+                        <Link to="/register">or register a new user!</Link>
+
                 </div>
                 </form>
 
