@@ -31,10 +31,10 @@ export const Card = (props) => {
                     setOpen(false)
                 }}>
                 <div className="deets">
-                    <div className="is-flex is-justify-content-space-around">
-                    <button onClick={() => setOpen(null)}>X</button>
+                    <div className="is-flex is-justify-content-space-between">
                     <p>{`This card was made by ${props.card.user}`}</p>
-                    <Delete cardId={props.card.id} token={props.token} />
+                    {props.username === props.card.user ? (<Delete token={props.token} cardId={props.id} />):(null)}
+                    <button onClick={() => setOpen(null)}>X</button>
                     </div>
                     <div className="flipping-card">
                         <div className="card-detail" style={{
