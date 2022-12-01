@@ -4,8 +4,9 @@ import { Login } from './components/Login'
 import { Header } from './components/Header'
 import { AllCards } from './components/AllCards'
 import { MyCards } from './components/MyCards'
-import { Friends } from './components/FriendsCards'
+import { Friends } from './components/FriendList'
 import { CreateCard } from './components/CreateCard'
+import { Register } from './components/Register'
 import { Routes, Route } from "react-router-dom"
 import useLocalStorageState from 'use-local-storage-state';
 
@@ -38,7 +39,10 @@ function App({ cardData }) {
         </div>
       ) : (
         <div>
-          <Login setAuth={setAuth} />
+          <Routes>
+          <Route path="/" element={<Login setAuth={setAuth} />} />
+          <Route path="/register" element={<Register setAuth={setAuth}/>} />
+          </Routes>
         </div>)}
 
 
