@@ -74,3 +74,22 @@ export const requestFriends = (token) => {
         { headers: { Authorization: `Token ${token}`}})
         return response
 }
+
+export const requestUserInfo = (token, username) => {
+    const url = `https://ecard-web-service.onrender.com/profile/search/?q=${username}`
+
+    const response = axios.get(url,
+        { headers: { Authorization: `Token ${token}`}})
+        return response
+}
+
+export const requestAddFriend = (token, friendId) => {
+    const url = 'https://ecard-web-service.onrender.com/friends/'
+
+    const response = axios.post(url,
+
+        {friend: friendId},
+    
+        {headers: { Authorization: `Token ${token}`}})
+        return response
+}
