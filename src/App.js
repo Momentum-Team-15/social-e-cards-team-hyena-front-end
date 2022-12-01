@@ -1,6 +1,5 @@
 import './App.css';
 import 'bulma/css/bulma.min.css'
-import 'remixicon/fonts/remixicon.css'
 import { Login } from './components/Login'
 import { Header } from './components/Header'
 import { AllCards } from './components/AllCards'

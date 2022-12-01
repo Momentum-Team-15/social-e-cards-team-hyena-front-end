@@ -4,6 +4,7 @@ import { Favorite } from './Favorite'
 import { requestAllCards, requestFriends } from './Requests'
 import { Delete } from './Delete'
 import { Follow } from './Follow'
+import { Unfollow } from './Unfollow'
 
 export const AllCards = ({ token, username }) => {
     const [cards, setCards] = useState([])
@@ -33,7 +34,8 @@ export const AllCards = ({ token, username }) => {
                         <div className="cardlist">
                             <p>by {card.user}</p>
                             <div className="is-flex">
-                                    {myFriends.includes(card.user) || username === card.user ? (null) : (<Follow token={token} author={card.user}/>)}
+                            {myFriends.includes(card.user) || username === card.user ? (null) : (<Follow token={token} author={card.user}/>)}
+                            <Unfollow token={token} friendshipId={friendList} />
                             {username === card.user && (<Delete token={token} cardId={card.id} />)}
                             <Favorite />
                             </div>
