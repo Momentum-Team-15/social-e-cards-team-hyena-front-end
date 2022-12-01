@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react'
 import { Card } from './Card'
 import { Favorite } from './Favorite'
 import { requestUsersCards } from './Requests'
+import { Delete } from './Delete'
 
-export const MyCards = ({ token }) => {
+export const MyCards = ({ token, username }) => {
     const [cards, setCards] = useState([])
 
     useEffect(() => {
@@ -18,9 +19,10 @@ export const MyCards = ({ token }) => {
                 {cards.map((card, idx) => (
                     <div key={idx}>
                         <div className="card">
-                            <Card card={card} />
+                            <Card token={token} card={card} username={username} />
                             <div className="cardlist">
                                 <p>by {card.user}</p>
+                                {username === card.user ? (<Delete token={token} cardId={card.id} />):(null)}
                                 <Favorite />
                             </div>
                         </div>
