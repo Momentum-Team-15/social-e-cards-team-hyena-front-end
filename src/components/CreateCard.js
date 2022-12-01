@@ -30,15 +30,14 @@ export const CreateCard = ({token}) => {
         event.preventDefault()
 
         requestCreateCard(token, createContainer)
-    
-        console.log(createContainer)
+
         setColorOfBackground('WHITE')
         setStyleOfBorder('SOLID')
         setFamilyOfFont('ARIAL')
         setColorOfBorder('BLACK')
         setColorOfFont('BLACK')
-        setFrontTextOfCard('')
-        setBackTextOfCard('')
+        setFrontTextOfCard('empty')
+        setBackTextOfCard('empty')
 
     }
 

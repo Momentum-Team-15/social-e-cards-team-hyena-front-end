@@ -33,7 +33,7 @@ export const Card = (props) => {
                 <div className="deets">
                     <div className="is-flex is-justify-content-space-between">
                     <p>{`This card was made by ${props.card.user}`}</p>
-                    {props.username === props.card.user ? (<Delete token={props.token} cardId={props.id} />):(null)}
+                    {props.username === props.card.user ? (<Delete token={props.token} cardId={props.card.id} />):(null)}
                     <button onClick={() => setOpen(null)}>X</button>
                     </div>
                     <div className="flipping-card">

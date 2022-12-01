@@ -7,6 +7,7 @@ import { Delete } from './Delete'
 export const MyCards = ({ token, username }) => {
     const [cards, setCards] = useState([])
 
+
     useEffect(() => {
         requestUsersCards(token)
             .then(res => setCards(res.data))
