@@ -35,7 +35,7 @@ export const AllCards = ({ token, username }) => {
                             <p>by {card.user}</p>
                             <div className="is-flex">
                             {myFriends.includes(card.user) || username === card.user ? (null) : (<Follow token={token} author={card.user}/>)}
-                            <Unfollow token={token} friendshipId={friendList} />
+                            {myFriends.includes(card.user) ? (<Unfollow token={token} myFriends={myFriends} friendList={friendList} card={card}/>) : (null)}
                             {username === card.user && (<Delete token={token} cardId={card.id} />)}
                             <Favorite />
                             </div>
